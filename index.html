@@ -4,48 +4,55 @@
   <meta charset="UTF-8">
   <title>Grattis!</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    .bild-container {
-      animation: zoomIn 3s ease forwards;
+    /* Bakgrundsbild animation */
+    .background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background-image: url('Finsk Kurs.png'); /* <-- Ändra till din bild */
+      background-size: cover;
+      background-position: center;
+      transform: translate(-50%, -50%) scale(0.1);
+      animation: zoomBackground 6s ease-in-out forwards;
+      z-index: -1;
+      filter: blur(8px) brightness(0.5);
     }
 
-    .bild-container img {
-      width: 100px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.2);
-    }
-
-    @keyframes zoomIn {
+    @keyframes zoomBackground {
       0% {
-        transform: scale(0.1);
+        transform: translate(-50%, -50%) scale(0.1);
         opacity: 0;
       }
       50% {
         opacity: 1;
       }
       100% {
-        transform: scale(1.5);
+        transform: translate(-50%, -50%) scale(1);
       }
     }
 
     .text {
-      margin-top: 30px;
-      font-size: 2em;
-      color: white;
-      text-shadow: 2px 2px #000;
-      animation: fadeInText 2s ease 3s forwards;
+      position: relative;
+      top: 40%;
+      text-align: center;
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 2px 2px 10px #000;
+      animation: fadeInText 3s ease 3s forwards;
       opacity: 0;
     }
 
@@ -58,9 +65,8 @@
   </style>
 </head>
 <body>
-  <div class="bild-container">
-    <img src="Finsk Kurs.png" alt="Grattis!">
-  </div>
+  <div class="background"></div>
+
   <div class="text">
     🎉 Grattis, du har vunnit en kurs! 🎓
   </div>
