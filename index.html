@@ -62,13 +62,13 @@
 
         .congrats-text {
             font-family: Arial, sans-serif;
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            font-weight: 900; /* Ökad tjocklek för bättre läsbarhet */
+            font-size: clamp(2rem, 6vw, 3.5rem); /* Ökad textstorlek */
+            font-weight: 900; /* Tjockaste fonten */
             text-align: center;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 0, 0, 0.5); /* Halvtransparent svart bakgrund */
-            border-radius: 8px; /* Rundade hörn för estetik */
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem; /* Mer padding för rymligare utseende */
+            background: rgba(0, 0, 0, 0.7); /* Mer solid mörk bakgrund */
+            border-radius: 10px; /* Större rundade hörn */
             background: linear-gradient(
                 45deg,
                 #ff6b6b,
@@ -81,6 +81,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.8); /* Subtil vit textskugga */
             animation: gradientShift 15s ease infinite, fadeIn 1s ease-in 2s forwards;
             opacity: 0;
         }
@@ -100,8 +101,8 @@
             }
 
             .congrats-text {
-                font-size: clamp(1.2rem, 4vw, 2rem);
-                padding: 0.5rem;
+                font-size: clamp(1.5rem, 5vw, 2.5rem); /* Något mindre på mobil */
+                padding: 0.5rem 1rem;
             }
         }
     </style>
