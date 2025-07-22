@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Grattis!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .bild-container {
+      animation: zoomIn 3s ease forwards;
+    }
+
+    .bild-container img {
+      width: 100px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5);
+      }
+    }
+
+    .text {
+      margin-top: 30px;
+      font-size: 2em;
+      color: white;
+      text-shadow: 2px 2px #000;
+      animation: fadeInText 2s ease 3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bild-container">
+    <img src="dinbild.png" alt="Grattis!">
+  </div>
+  <div class="text">
+    🎉 Grattis, du har vunnit en kurs! 🎓
+  </div>
+</body>
+</html>
