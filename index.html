@@ -1,74 +1,44 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>Grattis!</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* Bakgrundsbild animation */
-    .background {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 300%;
-      height: 300%;
-      background-image: url('Finsk Kurs.png'); /* <-- Ändra till din bild */
-      background-size: cover;
-      background-position: center;
-      transform: translate(-50%, -50%) scale(0.1);
-      animation: zoomBackground 6s ease-in-out forwards;
-      z-index: -1;
-      filter: blur(8px) brightness(0.5);
-    }
-
-    @keyframes zoomBackground {
-      0% {
-        transform: translate(-50%, -50%) scale(0.1);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
-
-    .text {
-      position: relative;
-      top: 40%;
-      text-align: center;
-      font-size: 2.8em;
-      color: #fff;
-      text-shadow: 2px 2px 10px #000;
-      animation: fadeInText 3s ease 3s forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeInText {
-      to {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bild som växer</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background-color: #111; /* mörk bakgrund för kontrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #grow-image {
+    width: 100px;      /* Startstorlek */
+    height: auto;
+    max-width: 95vw;   /* max bredd nästan hela skärmen */
+    max-height: 95vh;  /* max höjd nästan hela skärmen */
+    transition: width 3s ease-in-out;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-  <div class="background"></div>
 
-  <div class="text">
-    🎉 Grattis, du har vunnit en kurs! 🎓
-  </div>
+<img id="grow-image" src="finsk kurs.jpg" alt="Bild som växer" />
+
+<script>
+  const img = document.getElementById('grow-image');
+
+  // Växer automatiskt efter 0.5s
+  setTimeout(() => {
+    img.style.width = '95vw';
+  }, 500);
+
+  // Om du vill kan du göra så att den växer när du klickar på bilden istället:
+  // img.addEventListener('click', () => {
+  //   img.style.width = '95vw';
+  // });
+</script>
+
 </body>
 </html>
