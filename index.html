@@ -45,14 +45,30 @@
             object-fit: contain;
             display: block;
             margin: 0 auto;
+            animation: growAndBounce 2.2s ease-out forwards;
+        }
+
+        @keyframes growAndBounce {
+            0% {
+                transform: scale(0.1);
+            }
+            90% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         .congrats-text {
             font-family: Arial, sans-serif;
             font-size: clamp(1.5rem, 5vw, 2.5rem);
-            font-weight: bold;
+            font-weight: 900; /* Ökad tjocklek för bättre läsbarhet */
             text-align: center;
             margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.5); /* Halvtransparent svart bakgrund */
+            border-radius: 8px; /* Rundade hörn för estetik */
             background: linear-gradient(
                 45deg,
                 #ff6b6b,
@@ -65,7 +81,17 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 15s ease infinite, fadeIn 1s ease-in 2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         @media (max-width: 600px) {
@@ -75,14 +101,14 @@
 
             .congrats-text {
                 font-size: clamp(1.2rem, 4vw, 2rem);
-                padding: 0 1rem;
+                padding: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Lägg till ditt bildfilnamn här, t.ex. "vinstbild.jpg" -->
-    <img src="Finsk Kurs.png" alt="Vinstbild">
+    <img src="DIN_BILD_HÄR.jpg" alt="Vinstbild">
     <div class="congrats-text">Grattis, du har vunnit en kurs!</div>
 </body>
 </html>
